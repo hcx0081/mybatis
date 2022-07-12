@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.OrderMapper">
+    <!--order是关键字，所以为了不报错使用mybatis.order-->
+    <select id="findAll" resultMap="orderMap">
+        /*因为两个表中有重名的字段（id），所以使用别名区分*/
+        select *,user.id userid
+        from mybatis.order
+                 join user on order.uid = user.id;
+    </select>
+    <resultMap id="orderMap" type="com.mybatis.pojo.Order">
+        <id property="id" column="id"></id>
+        <result property="orderTime" column="ordertime"></result>
+        <result property="total" column="total"></result>
+        
+        <!--<result property="user.id" column="userid"></result>-->
+        <!--<result property="user.username" column="username"></result>-->
+        <!--<result property="user.password" column="password"></result>-->
+        <association property="user" javaType="com.mybatis.pojo.User">
+            <id property="id" column="userid"></id>
+            <result property="username" column="username"></result>
+            <result property="password" column="password"></result>
+        </association>
+    </resultMap>
+</mapper>
