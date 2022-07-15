@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>保存账户信息表单</h1>
-<form action="/account/save" method="post">
+<form action="account/save" method="post">
     id：<input type="text" name="id"><br>
     用户名：<input type="text" name="name"><br>
     金额：<input type="text" name="money"><br>
