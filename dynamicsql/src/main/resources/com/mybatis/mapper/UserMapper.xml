@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mybatis.dao.UserMapper">
+<mapper namespace="com.mybatis.mapper.UserMapper">
     <select id="findByCondition" resultType="com.mybatis.pojo.User">
         <!--select * from user where 1=1
         <if test="id!=0">
@@ -43,4 +43,26 @@
         select *
         from user
     </sql>
+    
+    <select id="selectByIdAndUsername" resultType="com.mybatis.pojo.User">
+        select *
+        from user
+        where id = #{arg0}
+          and username = #{param2}
+    </select>
+    
+    <select id="selectByIdAndUsernameByAnno" resultType="com.mybatis.pojo.User">
+        select *
+        from user
+        where id = #{id}
+          and username = #{username}
+    </select>
+    
+    <select id="selectByIdAndUsernameByMap" resultType="com.mybatis.pojo.User">
+        select *
+        from user
+        where id = #{id}
+          and username = #{username}
+    </select>
+    
 </mapper>
