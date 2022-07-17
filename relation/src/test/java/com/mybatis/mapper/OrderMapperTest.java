@@ -23,7 +23,12 @@ public class OrderMapperTest {
     
         OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
         
+        /*如果在核心配置文件中开启延迟加载则会按需执行嵌套查询*/
         List<Order> orderList = orderMapper.findOrdersByUserId(5);
-        orderList.forEach(System.out::println);
+        for (Order order : orderList) {
+            System.out.println(order.getId());//只需要获得订单的id而不需要获得用户的信息
+        }
+        
+        //orderList.forEach(System.out::println);
     }
 }
