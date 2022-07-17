@@ -8,5 +8,5 @@ import java.util.List;
  * @Description:
  */
 public interface UserMapper {
-    List<User> findAll();
+    List<User> findUserByUserId(int orderId);
 }

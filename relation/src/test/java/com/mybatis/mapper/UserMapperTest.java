@@ -23,7 +23,7 @@ public class UserMapperTest {
     
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
     
-        List<User> userList = userMapper.findAll();
+        List<User> userList = userMapper.findUserByUserId(5);
         userList.forEach(System.out::println);
     }
 }

@@ -23,7 +23,7 @@ public class OrderMapperTest {
     
         OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
         
-        List<Order> orderList = orderMapper.findAll();
+        List<Order> orderList = orderMapper.findOrdersByUserId(5);
         orderList.forEach(System.out::println);
     }
 }
