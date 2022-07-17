@@ -20,4 +20,8 @@ public interface UserMapper {
     User selectByIdAndUsernameByAnno(@Param("id") int id, @Param("username") String username);
     
     User selectByIdAndUsernameByMap(Map<String, Object> map);
+    
+    List<User> selectUserByLike(String username);
+    
+    int insertUser(User user);
 }

@@ -65,4 +65,14 @@
           and username = #{username}
     </select>
     
+    <select id="selectUserByLike" resultType="com.mybatis.pojo.User">
+        select *
+        from user
+        where username like "%"#{username}"%"
+    </select>
+    
+    <insert id="insertUser" keyProperty="id" useGeneratedKeys="true">
+        insert into user (username, password)
+        values (#{username}, #{password})
+    </insert>
 </mapper>
