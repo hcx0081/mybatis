@@ -27,8 +27,22 @@ class UserMapperTest {
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         
         User user = new User();
-        user.setUsername("");
+        user.setUsername("wu");
+        user.setPassword("123");
         List<User> userList = userMapper.findByCondition(user);
+        userList.forEach(System.out::println);
+    }
+    
+    @Test
+    void findByChooseTest() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        
+        User user = new User();
+        List<User> userList = userMapper.findByChoose(user);
         userList.forEach(System.out::println);
     }
     

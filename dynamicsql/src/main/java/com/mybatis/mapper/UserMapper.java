@@ -13,6 +13,8 @@ import java.util.Map;
 public interface UserMapper {
     List<User> findByCondition(User user);
     
+    List<User> findByChoose(User user);
+    
     List<User> findByIds(List<Integer> ids);
     
     User selectByIdAndUsername(int id, String username);

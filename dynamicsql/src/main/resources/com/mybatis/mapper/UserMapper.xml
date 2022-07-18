@@ -15,7 +15,7 @@
             and password=#{password}
         </if>-->
         select * from user
-        <where>
+        <!--<where>
             <if test="id!=0">
                 and id=#{id}
             </if>
@@ -25,6 +25,37 @@
             <if test="password!=null and password!=''">
                 and password=#{password}
             </if>
+        </where>-->
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="id!=0">
+                and id=#{id}
+            </if>
+            <if test="username!=null and username!=''">
+                and username=#{username}
+            </if>
+            <if test="password!=null and password!=''">
+                and password=#{password}
+            </if>
+        </trim>
+    </select>
+    
+    <select id="findByChoose" resultType="com.mybatis.pojo.User">
+        select * from user
+        <where>
+            <choose>
+                <when test="id!=0">
+                    id=#{id}
+                </when>
+                <when test="username!=null and username!=''">
+                    username=#{username}
+                </when>
+                <when test="password!=null and password!=''">
+                    password=#{password}
+                </when>
+                <otherwise>
+                
+                </otherwise>
+            </choose>
         </where>
     </select>
     
@@ -70,6 +101,7 @@
         from user
         where username like "%"#{username}"%"
     </select>
+    
     
     <insert id="insertUser" keyProperty="id" useGeneratedKeys="true">
         insert into user (username, password)
