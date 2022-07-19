@@ -30,7 +30,7 @@ public class OrderMapperTest {
     OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
     
     @Test
-    void oneToOne() throws IOException {
+    void oneToOne() {
         List<Order> orderAndUserAll = orderMapper.findOrderAndUserAll();
         orderAndUserAll.forEach(System.out::println);
     }

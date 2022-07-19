@@ -28,16 +28,15 @@ public class UserMapperTest {
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
     SqlSession sqlSession = sqlSessionFactory.openSession();
     UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-    OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
     
     @Test
-    void findAllTest() throws IOException {
+    void findAllTest() {
         List<User> userList = userMapper.findAll();
         userList.forEach(System.out::println);
     }
     
     @Test
-    void oneToManyTest(){
+    void oneToManyTest() {
         List<User> userAndOrderAll = userMapper.findUserAndOrderAll();
         userAndOrderAll.forEach(System.out::println);
     }
