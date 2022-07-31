@@ -30,7 +30,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
     </bean>
     
-    <!--扫描映射文件所在的包，并在容器中产生映射文件的实现类-->
+    <!--扫描Mapper接口所在的包，并在容器中产生Mapper接口的实现类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.ssm.mapper"></property>
     </bean>
