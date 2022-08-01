@@ -5,7 +5,7 @@
 <mapper namespace="com.mybatis.mapper.UserMapper">
     <select id="findByCondition" resultType="com.mybatis.pojo.User">
         <!--select * from user where 1=1
-        <if test="id!=0">
+        <if test="id!=0">&lt;!&ndash;int数据类型的默认值为0&ndash;&gt;
             and id=#{id}
         </if>
         <if test="username!=null">
@@ -16,7 +16,7 @@
         </if>-->
         select * from user
         <!--<where>
-            <if test="id!=0">
+            <if test="id!=0">&lt;!&ndash;int数据类型的默认值为0&ndash;&gt;
                 and id=#{id}
             </if>
             <if test="username!=null and username!=''">
@@ -27,7 +27,7 @@
             </if>
         </where>-->
         <trim prefix="where" prefixOverrides="and|or">
-            <if test="id!=0">
+            <if test="id!=0"><!--int数据类型的默认值为0-->
                 and id=#{id}
             </if>
             <if test="username!=null and username!=''">
@@ -43,7 +43,7 @@
         select * from user
         <where>
             <choose>
-                <when test="id!=0">
+                <when test="id!=0"><!--int数据类型的默认值为0-->
                     id=#{id}
                 </when>
                 <when test="username!=null and username!=''">
