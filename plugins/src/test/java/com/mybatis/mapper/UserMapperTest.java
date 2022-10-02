@@ -35,7 +35,7 @@ class UserMapperTest {
         
         //获得与分页相关的数据，但是需要先设置PageHelper
         //PageInfo<User> pageInfo = new PageInfo<>(userList);
-        PageInfo<User> pageInfo = new PageInfo<>(userList,3);//导航页的页数
+        PageInfo<User> pageInfo = new PageInfo<>(userList, 3);//导航页的页数
         
         System.out.println("当前页码：" + pageInfo.getPageNum());
         System.out.println("首页页码：" + pageInfo.getFirstPage());

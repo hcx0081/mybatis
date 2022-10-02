@@ -10,7 +10,7 @@
     <Loggers>
         <!--此处设置mapper映射文件的包名或类名-->
         <Logger name="com.mybatis.mapper" level="trace"/>
-        <Root level="error" >
+        <Root level="error">
             <AppenderRef ref="stdout"/>
         </Root>
     </Loggers>

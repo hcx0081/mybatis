@@ -56,5 +56,5 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <aop:pointcut id="txPointCut" expression="execution(* com.ssm.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"></aop:advisor>
     </aop:config>
-    
+
 </beans>

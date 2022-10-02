@@ -20,7 +20,7 @@ public class OrderMapperTest {
         InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-    
+        
         OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
         
         /*如果在核心配置文件中开启延迟加载则会按需执行嵌套查询*/

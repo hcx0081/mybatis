@@ -79,21 +79,21 @@
         select *
         from user
         where id = #{arg0}
-          and username = #{param2}
+        and username = #{param2}
     </select>
     
     <select id="selectByIdAndUsernameByAnno" resultType="com.mybatis.pojo.User">
         select *
         from user
         where id = #{id}
-          and username = #{username}
+        and username = #{username}
     </select>
     
     <select id="selectByIdAndUsernameByMap" resultType="com.mybatis.pojo.User">
         select *
         from user
         where id = #{id}
-          and username = #{username}
+        and username = #{username}
     </select>
     
     <select id="selectUserByLike" resultType="com.mybatis.pojo.User">

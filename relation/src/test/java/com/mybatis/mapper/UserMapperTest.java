@@ -20,9 +20,9 @@ public class UserMapperTest {
         InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-    
+        
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-    
+        
         List<User> userList = userMapper.findUserByUserId(5);
         userList.forEach(System.out::println);
     }

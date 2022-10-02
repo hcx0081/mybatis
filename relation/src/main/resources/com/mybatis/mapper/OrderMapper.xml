@@ -5,7 +5,7 @@
 <mapper namespace="com.mybatis.mapper.OrderMapper">
     <!--order是关键字，所以为了不报错使用mybatis.order-->
     <select id="findOrdersByUserId" resultMap="orderMap">
-    
+        
         <!--嵌套结果方式：-->
         <!--因为两个表中有重名的字段（id），所以使用别名区分-->
         <!--
@@ -14,7 +14,7 @@
         join user on mybatis.order.uid = user.id
         where user.id = #{userId}
         -->
-
+        
         <!--嵌套查询方式：-->
         select *
         from mybatis.order
@@ -35,7 +35,6 @@
             <result property="username" column="username"></result>
             <result property="password" column="password"></result>
         </association>-->
-        
         
         
         <!--嵌套查询方式：-->

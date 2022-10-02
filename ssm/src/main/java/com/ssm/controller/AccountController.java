@@ -21,15 +21,15 @@ public class AccountController {
     
     @RequestMapping("/save")
     @ResponseBody
-    public String save(Account account){
+    public String save(Account account) {
         accountService.save(account);
         return "save success";
     }
     
     @RequestMapping("/findAll")
-    public String findAll(Model model){
+    public String findAll(Model model) {
         List<Account> accountList = accountService.findAll();
-        model.addAttribute("accountList",accountList);
+        model.addAttribute("accountList", accountList);
         return "accountList";
     }
     

@@ -6,13 +6,13 @@
     <!--order是关键字，所以为了不报错使用mybatis.order-->
     <select id="findUserByUserId" resultMap="userMap">
         <!--因为两个表中有重名的字段（id），所以使用别名区分-->
-
+        
         <!--嵌套结果方式：-->
         select user.id, username, password, mybatis.order.id orderid, ordertime, total
         from user
         join mybatis.order on user.id = mybatis.order.uid
         where user.id = #{id}
-    
+        
         <!--嵌套查询方式：-->
         <!--
         select * from user where id =#{id}
@@ -22,7 +22,7 @@
         <id property="id" column="id"></id>
         <result property="username" column="username"></result>
         <result property="password" column="password"></result>
-    
+        
         
         <!--嵌套结果方式：-->
         <collection property="orders" ofType="com.mybatis.pojo.Order">
@@ -30,7 +30,7 @@
             <result property="orderTime" column="ordertime"></result>
             <result property="total" column="total"></result>
         </collection>
-    
+        
         
         <!--嵌套查询方式：-->
         <!--<collection property="orders" column="id" ofType="com.mybatis.pojo.Order"
