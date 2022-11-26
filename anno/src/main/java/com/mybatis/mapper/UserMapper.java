@@ -24,9 +24,9 @@ public interface UserMapper {
     @Select("select * from user where id = #{id};")
     User findById(int id);
     
-    //order是关键字，所以为了不报错使用mybatis.order
-    //因为两个表中有重名的字段（id），所以使用别名区分
-    @Select("select *,order.id orderid from user join mybatis.order on user.id=uid;")
+    // order是关键字，所以为了不报错使用mybatis.order
+    // 因为两个表中有重名的字段（id），所以使用别名区分
+    @Select("select *,order.id as orderid from user join mybatis.order on user.id=uid;")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "username", column = "username"),

@@ -3,45 +3,42 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mybatis.mapper.OrderMapper">
-    <!--order是关键字，所以为了不报错使用mybatis.order-->
+    <!-- order是关键字，为了不报错使用mybatis.order -->
     <select id="findOrdersByUserId" resultMap="orderMap">
+        <!-- 嵌套查询方式： -->
+        /* select * from mybatis.order where uid = #{uid} */
         
-        <!--嵌套结果方式：-->
-        <!--因为两个表中有重名的字段（id），所以使用别名区分-->
-        <!--
-        select mybatis.order.id, ordertime, total, user.id userid, username, password
+        <!-- 嵌套结果方式： -->
+        <!-- 因为两个表中有重名的字段（id），所以使用别名区分 -->
+        select mybatis.order.id, ordertime, total, uid, user.id as userid, username, password
         from mybatis.order
         join user on mybatis.order.uid = user.id
         where user.id = #{userId}
-        -->
-        
-        <!--嵌套查询方式：-->
-        select *
-        from mybatis.order
-        where uid = #{uid}
     </select>
     <resultMap id="orderMap" type="com.mybatis.pojo.Order">
-        <id property="id" column="id"></id>
-        <result property="orderTime" column="ordertime"></result>
-        <result property="total" column="total"></result>
+        <id property="id" column="id"/>
+        <result property="orderTime" column="ordertime"/>
+        <result property="total" column="total"/>
+        <result property="uid" column="uid"/>
         
-        <!--嵌套结果方式：-->
-        <!--<result property="user.id" column="userid"></result>-->
-        <!--<result property="user.username" column="username"></result>-->
-        <!--<result property="user.password" column="password"></result>-->
-        
-        <!--<association property="user" javaType="com.mybatis.pojo.User">
-            <id property="id" column="userid"></id>
-            <result property="username" column="username"></result>
-            <result property="password" column="password"></result>
-        </association>-->
+        <!-- 嵌套查询方式： -->
+        <!-- <association property="user" column="uid" javaType="com.mybatis.pojo.User" -->
+        <!--              select="com.mybatis.mapper.UserMapper.selectUserById"> -->
+        <!-- </association> -->
         
         
-        <!--嵌套查询方式：-->
-        <association property="user" column="uid" javaType="com.mybatis.pojo.User"
-                     select="com.mybatis.mapper.UserMapper.selectUserById">
+        <!-- 嵌套结果方式： -->
+        <!-- <result property="user.id" column="userid"/> -->
+        <!-- <result property="user.username" column="username"/> -->
+        <!-- <result property="user.password" column="password"/> -->
+        
+        <association property="user" javaType="com.mybatis.pojo.User">
+            <id property="id" column="userid"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
         </association>
     </resultMap>
+    
     
     <select id="selectOrderByUid" resultType="com.mybatis.pojo.Order">
         select *

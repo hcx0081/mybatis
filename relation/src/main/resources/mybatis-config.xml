@@ -19,10 +19,10 @@
             </dataSource>
         </environment>
     </environments>
-    <!--加载映射关系-->
+    <!-- 加载映射关系 -->
     <mappers>
-        <!--<mapper resource="com/mybatis/mapper/OrderMapper.xml"></mapper>-->
-        <!--<mapper resource="com/mybatis/mapper/UserMapper.xml"></mapper>-->
+        <!-- <mapper resource="com/mybatis/mapper/OrderMapper.xml"></mapper> -->
+        <!-- <mapper resource="com/mybatis/mapper/UserMapper.xml"></mapper> -->
         <package name="com.mybatis.mapper"/>
     </mappers>
 </configuration>

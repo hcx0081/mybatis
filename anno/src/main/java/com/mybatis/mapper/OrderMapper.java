@@ -10,16 +10,17 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface OrderMapper {
-    //order是关键字，所以为了不报错使用mybatis.order
-    //因为两个表中有重名的字段（id），所以使用别名区分
-    @Select("select *,user.id userid from mybatis.order join user on uid=user.id;")
+    // order是关键字，所以为了不报错使用mybatis.order
+    // 因为两个表中有重名的字段（id），所以使用别名区分
+    @Select("select *,user.id as userid from mybatis.order join user on uid=user.id;")
     @Results({
             @Result(property = "id", column = "id"),
             @Result(property = "orderTime", column = "ordertime"),
             @Result(property = "total", column = "total"),
-            //@Result(property = "user.id",column = "userid"),
-            //@Result(property = "user.username",column = "username"),
-            //@Result(property = "user.password",column = "password"),
+            @Result(property = "uid", column = "uid"),
+            // @Result(property = "user.id",column = "userid"),
+            // @Result(property = "user.username",column = "username"),
+            // @Result(property = "user.password",column = "password"),
             @Result(
                     property = "user",
                     column = "uid",
