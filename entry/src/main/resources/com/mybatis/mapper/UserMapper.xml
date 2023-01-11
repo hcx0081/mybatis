@@ -14,7 +14,7 @@
     <update id="update">
         update user
         set username = #{username},
-        password=#{password}
+            password = #{password}
         where id = #{id}
     </update>
     <delete id="delete">
