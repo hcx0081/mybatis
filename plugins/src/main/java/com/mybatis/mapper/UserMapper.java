@@ -6,7 +6,7 @@ import com.mybatis.pojo.User;
 import java.util.List;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public interface UserMapper {
     List<User> findAll();

@@ -41,6 +41,7 @@ public class Order {
      * This method returns the value of the database column order.id
      *
      * @return the value of order.id
+     *
      * @mbg.generated
      */
     public Integer getId() {
@@ -63,6 +64,7 @@ public class Order {
      * This method returns the value of the database column order.ordertime
      *
      * @return the value of order.ordertime
+     *
      * @mbg.generated
      */
     public Date getOrdertime() {
@@ -85,6 +87,7 @@ public class Order {
      * This method returns the value of the database column order.total
      *
      * @return the value of order.total
+     *
      * @mbg.generated
      */
     public BigDecimal getTotal() {
@@ -107,6 +110,7 @@ public class Order {
      * This method returns the value of the database column order.uid
      *
      * @return the value of order.uid
+     *
      * @mbg.generated
      */
     public Integer getUid() {

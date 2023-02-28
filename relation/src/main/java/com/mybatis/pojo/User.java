@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 @Data
 public class User {

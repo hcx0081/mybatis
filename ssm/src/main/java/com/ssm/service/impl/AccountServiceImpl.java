@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
-    //InputStream resourceAsStream;
+    // InputStream resourceAsStream;
     //{
     //    try {
     //        resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
@@ -18,11 +18,11 @@ public class AccountServiceImpl implements AccountService {
     //        e.printStackTrace();
     //    }
     //}
-    //SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+    // SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
     //
     ///*将SqlSession交给Spring容器管理，从容器中获得执行操作的Mapper实例即可，所以不用写*/
-    //SqlSession sqlSession = sqlSessionFactory.openSession();
-    //AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
+    // SqlSession sqlSession = sqlSessionFactory.openSession();
+    // AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
     
     @Autowired
     private AccountMapper accountMapper;
@@ -37,8 +37,8 @@ public class AccountServiceImpl implements AccountService {
         accountMapper.save(account);
         
         ///*将事务的控制交给Spring容器进行声明式事务控制，所以不用写*/
-        //sqlSession.commit();
-        //sqlSession.close();
+        // sqlSession.commit();
+        // sqlSession.close();
     }
     
     /**
@@ -52,7 +52,3 @@ public class AccountServiceImpl implements AccountService {
         return accountList;
     }
 }
-
-
-
-

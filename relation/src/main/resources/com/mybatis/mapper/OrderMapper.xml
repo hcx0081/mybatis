@@ -6,7 +6,7 @@
     <!-- order是关键字，为了不报错使用mybatis.order -->
     <select id="findOrdersByUserId" resultMap="orderMap">
         <!-- 嵌套查询方式： -->
-        /* select * from mybatis.order where uid = #{uid} */
+        <!-- select * from mybatis.order where uid = #{uid} -->
         
         <!-- 嵌套结果方式： -->
         <!-- 因为两个表中有重名的字段（id），所以使用别名区分 -->

@@ -1,7 +1,7 @@
 package com.mybatis.pojo;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public class User {
     private int id;

@@ -4,10 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="jdbc.properties"></properties>
-    <!--配置分页助手插件-->
+    <!-- 配置分页助手插件 -->
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageHelper">
-            <!--设置方言-->
+            <!-- 设置方言 -->
             <property name="dialect" value="mysql"/>
         </plugin>
     </plugins>
@@ -22,8 +22,10 @@
             </dataSource>
         </environment>
     </environments>
-    <!--加载映射关系-->
+    <!-- 加载映射关系 -->
     <mappers>
         <mapper resource="com/mybatis/mapper/UserMapper.xml"></mapper>
+        <package name=""/>
     </mappers>
+
 </configuration>

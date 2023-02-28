@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mybatis.mapper.UserMapper">
     <select id="findByCondition" resultType="com.mybatis.pojo.User">
-        <!--select * from user where 1=1
-        <if test="id!=0">&lt;!&ndash;int数据类型的默认值为0&ndash;&gt;
+        select * from user where 1=1
+        <if test="id!=0"><!-- int数据类型的默认值为0 -->
             and id=#{id}
         </if>
         <if test="username!=null">
@@ -13,10 +13,10 @@
         </if>
         <if test="password!=null">
             and password=#{password}
-        </if>-->
+        </if>
         select * from user
-        <!--<where>
-            <if test="id!=0">&lt;!&ndash;int数据类型的默认值为0&ndash;&gt;
+        <where>
+            <if test="id!=0"><!-- int数据类型的默认值为0 -->
                 and id=#{id}
             </if>
             <if test="username!=null and username!=''">
@@ -25,9 +25,9 @@
             <if test="password!=null and password!=''">
                 and password=#{password}
             </if>
-        </where>-->
+        </where>
         <trim prefix="where" prefixOverrides="and|or">
-            <if test="id!=0"><!--int数据类型的默认值为0-->
+            <if test="id!=0"><!-- int数据类型的默认值为0 -->
                 and id=#{id}
             </if>
             <if test="username!=null and username!=''">
@@ -43,7 +43,7 @@
         select * from user
         <where>
             <choose>
-                <when test="id!=0"><!--int数据类型的默认值为0-->
+                <when test="id!=0"><!-- int数据类型的默认值为0 -->
                     id=#{id}
                 </when>
                 <when test="username!=null and username!=''">
@@ -60,9 +60,10 @@
     </select>
     
     <select id="findByIds" resultType="com.mybatis.pojo.User">
-        /*select *
-        from user*/
-        <include refid="selectUser"></include>
+        <!-- select * from user -->
+        <include refid="selectUser">
+            <property name="" value=""/>
+        </include>
         <where>
             <foreach collection="list" open="id in(" close=")" item="id" separator=",">
                 #{id}
@@ -79,21 +80,21 @@
         select *
         from user
         where id = #{arg0}
-        and username = #{param2}
+          and username = #{param2}
     </select>
     
     <select id="selectByIdAndUsernameByAnno" resultType="com.mybatis.pojo.User">
         select *
         from user
         where id = #{id}
-        and username = #{username}
+          and username = #{username}
     </select>
     
     <select id="selectByIdAndUsernameByMap" resultType="com.mybatis.pojo.User">
         select *
         from user
         where id = #{id}
-        and username = #{username}
+          and username = #{username}
     </select>
     
     <select id="selectUserByLike" resultType="com.mybatis.pojo.User">

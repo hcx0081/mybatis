@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 @Data
 public class Order {

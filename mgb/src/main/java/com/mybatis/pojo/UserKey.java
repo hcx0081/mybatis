@@ -22,6 +22,7 @@ public class UserKey {
      * This method returns the value of the database column user.Host
      *
      * @return the value of user.Host
+     *
      * @mbg.generated
      */
     public String getHost() {
@@ -44,6 +45,7 @@ public class UserKey {
      * This method returns the value of the database column user.User
      *
      * @return the value of user.User
+     *
      * @mbg.generated
      */
     public String getUser() {

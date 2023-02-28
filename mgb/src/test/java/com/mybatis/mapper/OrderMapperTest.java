@@ -12,10 +12,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
- * @Description:
+ * {@code @Description:}
  */
 class OrderMapperTest {
     @Test
@@ -24,11 +22,11 @@ class OrderMapperTest {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
-        //查询所有数据
-        //List<Order> orderList = orderMapper.selectByExample(null);
-        //orderList.forEach(System.out::println);
+        // 查询所有数据
+        // List<Order> orderList = orderMapper.selectByExample(null);
+        // orderList.forEach(System.out::println);
         
-        //根据条件查询
+        // 根据条件查询
         OrderExample orderExample = new OrderExample();
         orderExample.createCriteria().andUidEqualTo(5);
         List<Order> orderList = orderMapper.selectByExample(orderExample);

@@ -3,7 +3,7 @@ package com.mybatis.pojo;
 import lombok.Data;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 @Data
 public class User {

@@ -2,10 +2,9 @@ package com.mybatis.mapper;
 
 import com.mybatis.pojo.Order;
 import com.mybatis.pojo.OrderExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface OrderMapper {
     /**

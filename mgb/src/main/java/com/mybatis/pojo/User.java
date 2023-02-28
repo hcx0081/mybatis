@@ -22,6 +22,7 @@ public class User {
      * This method returns the value of the database column user.username
      *
      * @return the value of user.username
+     *
      * @mbg.generated
      */
     public String getUsername() {
@@ -44,6 +45,7 @@ public class User {
      * This method returns the value of the database column user.balance
      *
      * @return the value of user.balance
+     *
      * @mbg.generated
      */
     public Double getBalance() {

@@ -46,6 +46,7 @@ public class UserWithBLOBs extends User {
      * This method returns the value of the database column user.ssl_cipher
      *
      * @return the value of user.ssl_cipher
+     *
      * @mbg.generated
      */
     public byte[] getSslCipher() {
@@ -68,6 +69,7 @@ public class UserWithBLOBs extends User {
      * This method returns the value of the database column user.x509_issuer
      *
      * @return the value of user.x509_issuer
+     *
      * @mbg.generated
      */
     public byte[] getX509Issuer() {
@@ -90,6 +92,7 @@ public class UserWithBLOBs extends User {
      * This method returns the value of the database column user.x509_subject
      *
      * @return the value of user.x509_subject
+     *
      * @mbg.generated
      */
     public byte[] getX509Subject() {
@@ -112,6 +115,7 @@ public class UserWithBLOBs extends User {
      * This method returns the value of the database column user.authentication_string
      *
      * @return the value of user.authentication_string
+     *
      * @mbg.generated
      */
     public String getAuthenticationString() {
@@ -134,6 +138,7 @@ public class UserWithBLOBs extends User {
      * This method returns the value of the database column user.User_attributes
      *
      * @return the value of user.User_attributes
+     *
      * @mbg.generated
      */
     public String getUserAttributes() {

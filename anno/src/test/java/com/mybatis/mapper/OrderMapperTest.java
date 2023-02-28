@@ -12,10 +12,13 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public class OrderMapperTest {
     InputStream resourceAsStream;
+    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
     
     {
         try {
@@ -24,10 +27,6 @@ public class OrderMapperTest {
             e.printStackTrace();
         }
     }
-    
-    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
-    SqlSession sqlSession = sqlSessionFactory.openSession();
-    OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
     
     @Test
     void oneToOne() {

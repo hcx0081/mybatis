@@ -12,10 +12,13 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public class UserMapperTest {
     InputStream resourceAsStream;
+    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
     
     {
         try {
@@ -24,10 +27,6 @@ public class UserMapperTest {
             e.printStackTrace();
         }
     }
-    
-    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
-    SqlSession sqlSession = sqlSessionFactory.openSession();
-    UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
     
     @Test
     void findAllTest() {

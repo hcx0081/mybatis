@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public class MyBatisTest {
     
@@ -60,7 +60,7 @@ public class MyBatisTest {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         // 通过SqlSessionFactory创建sqlSession，获取sqlSession对象
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        //执行SQL
+        // 执行SQL
         User user = new User();
         user.setId(8);
         user.setUsername("qianqiqi");

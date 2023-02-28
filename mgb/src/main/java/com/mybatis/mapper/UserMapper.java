@@ -2,10 +2,9 @@ package com.mybatis.mapper;
 
 import com.mybatis.pojo.User;
 import com.mybatis.pojo.UserExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     /**

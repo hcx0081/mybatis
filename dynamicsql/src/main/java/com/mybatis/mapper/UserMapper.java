@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 public interface UserMapper {
     List<User> findByCondition(User user);

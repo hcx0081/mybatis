@@ -15,7 +15,7 @@ import java.util.List;
 
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 class UserMapperTest {
     @Test
@@ -123,14 +123,14 @@ class UserMapperTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-    
-        //注意此处传入的id
-        User user = new User(0, "zhangsanfeng", "123");
+        
+        // 注意此处传入的id
+        User user = new User(12345, "zs", "123");
         int rows = userMapper.insertUser(user);
-    
-        System.out.println("插入了"+rows+"条数据");
-        //如果insert语句中没有添加 keyProperty="id" useGeneratedKeys="true" 属性，则查询不出，即id为0
-        System.out.println("插入的数据的主键为"+user.getId());
+        
+        System.out.println("插入了" + rows + "条数据");
+        // 如果insert语句中没有设置 keyProperty="id" useGeneratedKeys="true" 属性，则查询不出id，即id为0
+        System.out.println("插入的数据的主键为" + user.getId());
         
         sqlSession.commit();
         sqlSession.close();

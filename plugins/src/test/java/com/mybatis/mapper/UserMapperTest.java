@@ -16,7 +16,7 @@ import java.util.List;
 
 
 /**
- * @Description:
+ * {@code @Description:}
  */
 class UserMapperTest {
     @Test
@@ -27,15 +27,15 @@ class UserMapperTest {
         
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         
-        //设置当前页码和每页显示的条数
+        // 设置当前页码和每页显示的条数
         PageHelper.startPage(6, 2);
         
         List<User> userList = userMapper.findAll();
         userList.forEach(System.out::println);
         
-        //获得与分页相关的数据，但是需要先设置PageHelper
-        //PageInfo<User> pageInfo = new PageInfo<>(userList);
-        PageInfo<User> pageInfo = new PageInfo<>(userList, 3);//导航页的页数
+        // 获取与分页相关的数据，但是需要先设置PageHelper
+        // PageInfo<User> pageInfo = new PageInfo<>(userList);
+        PageInfo<User> pageInfo = new PageInfo<>(userList, 3);// 导航页的页数
         
         System.out.println("当前页码：" + pageInfo.getPageNum());
         System.out.println("首页页码：" + pageInfo.getFirstPage());
