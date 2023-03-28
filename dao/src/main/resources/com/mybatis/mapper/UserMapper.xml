@@ -7,4 +7,10 @@
         select *
         from user;
     </select>
+    <select id="findByUserAndPassword" resultType="com.mybatis.pojo.User">
+        select*
+        from user
+        where user_name = #{username}
+          and password = #{param2}
+    </select>
 </mapper>

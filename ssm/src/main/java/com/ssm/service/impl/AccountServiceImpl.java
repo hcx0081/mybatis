@@ -11,16 +11,16 @@ import java.util.List;
 @Service
 public class AccountServiceImpl implements AccountService {
     // InputStream resourceAsStream;
-    //{
+    // {
     //    try {
     //        resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
     //    } catch (IOException e) {
     //        e.printStackTrace();
     //    }
-    //}
+    // }
     // SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
     //
-    ///*将SqlSession交给Spring容器管理，从容器中获得执行操作的Mapper实例即可，所以不用写*/
+    // /* Spring容器管理SqlSession，可以从Spring容器中获取执行操作的Mapper实例，所以省略 */
     // SqlSession sqlSession = sqlSessionFactory.openSession();
     // AccountMapper accountMapper = sqlSession.getMapper(AccountMapper.class);
     
@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
     public void save(Account account) {
         accountMapper.save(account);
         
-        ///*将事务的控制交给Spring容器进行声明式事务控制，所以不用写*/
+        /* Spring容器进行声明式事务控制，所以省略 */
         // sqlSession.commit();
         // sqlSession.close();
     }

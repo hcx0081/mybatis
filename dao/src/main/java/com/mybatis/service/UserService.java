@@ -22,7 +22,8 @@ public class UserService {
         
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         
-        List<User> userList = userMapper.findAll();
+        // List<User> userList = userMapper.findAll();
+        List<User> userList = userMapper.findByUserAndPassword("zs", "123");
         userList.forEach(System.out::println);
     }
 }
